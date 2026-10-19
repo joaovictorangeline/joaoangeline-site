@@ -1,0 +1,14 @@
+# deps & build output
+node_modules/
+web/.next/
+web/out/
+
+# secrets: never commit
+.env
+.env.*
+!.env.example
+
+# WordPress local dev
+cms/.wp-env/
+*.log
+.DS_Store
