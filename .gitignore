@@ -7,6 +7,9 @@ web/out/
 .env
 .env.*
 !.env.example
+.rocket-login.json
+.rocket-token
+.rocket-site-*.json
 
 # WordPress local dev
 cms/.wp-env/
