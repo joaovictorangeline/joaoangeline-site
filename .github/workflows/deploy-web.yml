@@ -1,0 +1,60 @@
+name: Deploy web (static)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - ".github/workflows/deploy-web.yml"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only show what rsync would change"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-web
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Set up SSH
+        working-directory: .
+        env:
+          KEY: ${{ secrets.ROCKET_SSH_KEY_WEB }}
+          KNOWN_HOSTS: ${{ secrets.ROCKET_KNOWN_HOSTS_WEB }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Sync to Rocket.net
+        working-directory: .
+        env:
+          TARGET: ${{ secrets.ROCKET_SSH_TARGET_WEB }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          rsync -az --delete --itemize-changes $DRY_RUN \
+            -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
+            web/out/ "$TARGET:public_html/"

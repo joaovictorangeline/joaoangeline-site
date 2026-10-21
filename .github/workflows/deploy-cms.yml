@@ -1,0 +1,50 @@
+name: Deploy cms (WordPress)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cms/**"
+      - ".github/workflows/deploy-cms.yml"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only show what rsync would change"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-cms
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up SSH
+        env:
+          KEY: ${{ secrets.ROCKET_SSH_KEY_CMS }}
+          KNOWN_HOSTS: ${{ secrets.ROCKET_KNOWN_HOSTS_CMS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Sync custom code
+        env:
+          TARGET: ${{ secrets.ROCKET_SSH_TARGET_CMS }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          for dir in themes plugins mu-plugins; do
+            [ -d "cms/wp-content/$dir" ] || continue
+            rsync -az --itemize-changes $DRY_RUN \
+              --exclude='.git' --exclude='node_modules' --exclude='.DS_Store' \
+              -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
+              "cms/wp-content/$dir/" "$TARGET:public_html/wp-content/$dir/"
+          done
