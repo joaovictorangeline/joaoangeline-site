@@ -1,3 +1,5 @@
+import { WorkspaceShowcase } from "./WorkspaceShowcase";
+
 export default function Hero() {
     return(
         <section id="top" className="relative overflow-hidden" style={{background:  "radial-gradient(60% 50% at 50% 0%, rgba(224,139,80,0.18), transparent 70%)"}}>
@@ -20,6 +22,8 @@ export default function Hero() {
                     </a>
                 </div>    
             </div>
+
+            <WorkspaceShowcase />
         </section>
     )
 }
