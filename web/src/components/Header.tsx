@@ -38,7 +38,7 @@ export default function Header() {
 
     return(
         <header className="sticky top-0 z-50 border-b border-line bg-cream/80 backdrop-blur">
-            <div className="mx-auto flex h-16 max-w-6x1 items-center justify-between px-6">
+            <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
                 <a href="#top" onClick={close} className="flex items-center gap-3">
                     <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-terracotta text-sm font-bold text-white">
                         JA
@@ -60,7 +60,7 @@ export default function Header() {
                 </nav>
                 
                 <div className="flex items-center gap-2">
-                    <a href="#contact" className="rounded-x1 bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
+                    <a href="#contact" className="rounded-xl bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90">
                         Let&apos;s chat
                     </a>
 
