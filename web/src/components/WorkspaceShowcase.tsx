@@ -20,6 +20,7 @@ export function WorkspaceShowcase({
                         width={1600}
                         height={800}
                         className="h-auto w-full"
+                        loading="eager"
                     />
                 </BrowserFrame>
             </div>
