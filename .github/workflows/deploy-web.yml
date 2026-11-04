@@ -64,4 +64,4 @@ jobs:
           ROCKET_USER: ${{ secrets.ROCKET_API_USER }}
           ROCKET_PASSWORD: ${{ secrets.ROCKET_API_PASSWORD }}
           ROCKET_SITE_ID: ${{ secrets.ROCKET_SITE_ID_WEB }}
-        run: bash scripts/rocket-purge-cache.sh
+        run: bash "$GITHUB_WORKSPACE/scripts/rocket-purge-cache.sh"
