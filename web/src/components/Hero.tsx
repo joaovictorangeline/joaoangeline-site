@@ -4,11 +4,15 @@ export default function Hero() {
     return(
         <section id="top" className="relative overflow-hidden" style={{background:  "radial-gradient(60% 50% at 50% 0%, rgba(224,139,80,0.18), transparent 70%)"}}>
             <div className="mx-auto max-w-6x1 px-6 pb-24 pt-20 text-center md:pt-28">
-                <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-7xl"><span className="bg-gradient-to-r from-terracotta to-terracotta-light bg-clip-text text-transparent">WordPress</span>{" "} Developer &amp;
-                <br />
-                Customer Success</h1>
+                <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight lg:text-7xl">
+                    <span className="block">
+                        <span className="bg-gradient-to-r from-terracotta to-terracotta-light bg-clip-text text-transparent">WordPress</span>{" "} Developer &amp;
+                    </span>
+                    <span className="block">                    
+                    Customer Success</span>
+               </h1>
 
-                <p className="mt-8 text-xl. text-muted md:text-2xl">
+                <p className="mt-8 text-2xl text-muted lg:text-2xl">
                     Bringing solutions and building relationships
                 </p>
 

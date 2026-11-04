@@ -112,27 +112,27 @@ const skillGroups: { label: string; skills: string[] }[] = [
 
 export default function Experience() {
     return (
-        <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 md:py-16">
-            <h2 id="experience-heading" className="text-5xl font-bold tracking-light text-ink">
+        <section id="experience" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-20 sm:px-6 lg:py-16">
+            <h2 id="experience-heading" className="text-5xl font-bold tracking-tight text-ink">
                 Experience
             </h2>
 
             <ol className="mt-12 divide-y divide-line overflow-hidden rounded-3xl border border-line bg-white/50">
                 {roles.map((role) => (
-                    <li key={role.company} className="grid gap-4 p-6 md:grid-cols-[14rem_1fr_auto] md:gap-8 md:p-8">
+                    <li key={role.company} className="grid gap-4 p-6 lg:grid-cols-[14rem_1fr_auto] lg:gap-8 lg:p-8">
                         {/* Period first on mobile, last column on desktop */}
-                        <span className="w-fit rounded-full bg-blush px-4 py-1.5 text-sm font-medium text-terracotta md:order-3 md:self-start">
+                        <span className="w-fit rounded-full bg-blush px-4 py-1.5 text-sm font-medium text-terracotta lg:order-3 lg:self-start">
                             {role.period}
                         </span>
 
-                        <div className="md;order-1">
-                            <h3 className="text-xl font-bold text-ink md;text-2xl">
+                        <div className="lg:order-1">
+                            <h3 className="text-xl font-bold text-ink lg:text-2xl">
                                 {role.company}
                             </h3>
                             <p className="mt-1 text-muted">{role.title}</p>
                         </div>
 
-                        <div className="md:order-2">
+                        <div className="lg:order-2">
                             <p className="mt-1 text-muted">{role.summary}</p>
 
                             <ul className="mt-4 space-y-2">
