@@ -2,11 +2,11 @@
 
 /* Design tokens: Tailwind v4 turns these into classes like bg-terracotta, text-ink */
 @theme {
-  --color-terracotta: #c0654a;
+  --color-terracotta: #9c4530;
   --color-terracotta-light: #e08b50;
   --color-blush: #f5e0d3;
   --color-ink: #2a1a14;
-  --color-muted: #7a5f57;
+  --color-muted: #6e544c;
   --color-cream: #fdfaf8;
   --color-line: #e8ddd6;
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
