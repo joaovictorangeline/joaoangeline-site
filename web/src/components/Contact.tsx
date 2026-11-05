@@ -8,7 +8,7 @@ export default function Contact() {
 
                 <p className="mx-auto mt-5 max-w-xl text-base text-white sm:text-xl">Development, support, or both — I&apos;m one message away.</p>
 
-                <a href="mailto:hello@joaoangeline.com" className="mt-10 inline-block rounded-2xl bg-white px-8 text-base font-semibold text-ink shadow-xl transition hover:-translate-y-0.5 hover: shadow-xl focus-visible:outline-2 focus-visible: outline-offset-4 focus-visible:outline-white sm:px-12 sm:py-5 sm:text-lg">
+                <a href="mailto:hello@joaoangeline.com" className="mt-10 inline-block rounded-2xl bg-white py-5 px-8 text-base font-semibold text-ink shadow-xl transition hover:-translate-y-0.5 hover: shadow-xl focus-visible:outline-2 focus-visible: outline-offset-4 focus-visible:outline-white sm:px-12 sm:py-5 sm:text-lg">
                      hello@joaoangeline.com
                 </a>
             </div>
