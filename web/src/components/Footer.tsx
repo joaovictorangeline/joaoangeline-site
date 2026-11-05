@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <footer className="border-t border-line px-4 py-10 sm:px-6">
             <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center text-sm text-muted sm:flex-row sm:justify-between sm:text-left sm:text-base">
-                <p>© {year} Joao Angeline · joaoangeline.com</p>
+                <p>© {year} Joao Angeline. Built by Joao Angeline with React, Next.js and WordPress</p>
 
                 <a href="https://github.com/joaovictorangeline/joaoangeline-site" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-1.5 rounded-md transition hover:text-terracotta focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta">
                     Know this site behind the scenes on{" "}
