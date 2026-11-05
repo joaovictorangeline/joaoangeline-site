@@ -11,6 +11,23 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Joao Angeline | WordPress Developer & Customer Success",
   description: "Bringing solutions and building relationships.",
+   openGraph: {
+    title: "Joao Angeline | WordPress Developer & Customer Success",
+    description:
+      "See more about Joao Angeline, a WordPress Developer who builds custom plugins, themes and Gutenberg blocks with PHP, JavaScript and React.",
+    url: "/",
+    siteName: "Joao Angeline",
+    locale: "en_US",
+    type: "website",
+    images: ["/images/joao-angeline-profile.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Joao Angeline | WordPress Developer & Customer Success",
+    description:
+      "See more about Joao Angeline, a WordPress Developer who builds custom plugins, themes and Gutenberg blocks with PHP, JavaScript and React.",
+    images: ["/images/joao-angeline-profile.png"],
+  },
 };
 
 export default function RootLayout({
