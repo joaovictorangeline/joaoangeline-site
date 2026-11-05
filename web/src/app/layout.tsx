@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     siteName: "Joao Angeline",
     locale: "en_US",
     type: "website",
-    images: ["/images/joao-angeline-profile.png"],
+    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: "Joao Angeline — WordPress Developer & Customer Success" }],
   },
   twitter: {
     card: "summary",
     title: "Joao Angeline | WordPress Developer & Customer Success",
     description:
       "See more about Joao Angeline, a WordPress Developer who builds custom plugins, themes and Gutenberg blocks with PHP, JavaScript and React.",
-    images: ["/images/joao-angeline-profile.png"],
+    images: ["/images/og-image.png"],
   },
 };
 
