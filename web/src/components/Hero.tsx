@@ -6,7 +6,7 @@ export default function Hero() {
             <div className="mx-auto max-w-6x1 px-6 pb-24 pt-20 text-center md:pt-28">
                 <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight lg:text-7xl">
                     <span className="block">
-                        <span className="bg-gradient-to-r from-terracotta to-terracotta-light bg-clip-text text-transparent">WordPress</span>{" "} Developer &amp;
+                        <span className="bg-gradient-to-r from-terracotta to-terracotta-light bg-clip-text text-transparent">Software</span>{" "} Engineer &amp;
                     </span>
                     <span className="block">                    
                     Customer Success</span>
